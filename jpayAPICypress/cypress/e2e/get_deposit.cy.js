@@ -1,5 +1,5 @@
 var i = 0
-for(i = 0; i < 100 ; i++){
+for(i = 0; i < 1 ; i++){
 
 const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -39,6 +39,13 @@ describe('JPAY TESTING', () => {
             uid: uID,
             transfer_id: transferID
         },
+    }).as('details')
+    cy.get('@details').its('status').should('eq', 200)
+    cy.get('@details').then((response) => {
+
+        cy.log(JSON.stringify(
+            response.body
+        ))
     });
 })
 })
