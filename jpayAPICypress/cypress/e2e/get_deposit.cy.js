@@ -1,5 +1,7 @@
-var i = 0
-for(i = 0; i < 1 ; i++){
+import 'cypress-plugin-api'
+
+var transactions = 0
+for(transactions = 0; transactions < 1 ; transactions++){
 
 const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
 
@@ -9,7 +11,6 @@ function generateString(length) {
     for ( let i = 0; i < length; i++ ) {
         result += characters.charAt(Math.floor(Math.random() * charactersLength));
     }
-
     return result;
 }
 
@@ -40,9 +41,8 @@ describe('JPAY TESTING', () => {
             transfer_id: transferID
         },
     }).as('details')
-    cy.get('@details').its('status').should('eq', 200)
-    cy.get('@details').then((response) => {
-
+        cy.get('@details').its('status').should('eq', 200)
+        cy.get('@details').then((response) => {
         cy.log(JSON.stringify(
             response.body
         ))

@@ -1,3 +1,5 @@
+import 'cypress-plugin-api'
+
 var i = 0
 for(i = 0; i < 99 ; i++){
 
