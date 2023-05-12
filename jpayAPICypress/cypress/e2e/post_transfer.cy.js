@@ -1,14 +1,13 @@
 import 'cypress-plugin-api'
+import { jpay_url } from '../functions/urls'
 
 var transactions = 0
 for(transactions = 0; transactions < 1 ; transactions++){
 
-let postTransferURL = "https://api-stage.orientalwallet.com/api/v1/generate-transfer"
+let postTransferURL = jpay_url.postTransfer
 let sID = "509999232"
 let uID = "xxxx"
 let merchantNumber = "8840451493"
-
-
 
 describe('JPAY TESTING', () => {
     it("POST Generate Transfer", () => {

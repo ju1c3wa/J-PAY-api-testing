@@ -1,30 +1,17 @@
 import 'cypress-plugin-api'
+import { date_today } from '../functions/dateGenerator';
+import { generateString } from '../functions/randomStringGenerator';
+import { jpay_url } from '../functions/urls';
 
 var transactions = 0
 for(transactions = 0; transactions < 1 ; transactions++){
-
-const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-
-function generateString(length) {
-    let result = ' ';
-    const charactersLength = characters.length;
-    for ( let i = 0; i < length; i++ ) {
-        result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-}
-
-var today = new Date();
-var dd = String(today.getDate()).padStart(2, '0');
-var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-var yyyy = today.getFullYear();
-today = yyyy + mm + dd;
+let dateToday = date_today();
 let uID = "xxxx"
 let depositAmount = "100000"
 let transferID = "8645932"
 let paymentID = generateString(15);
-let siteDepositURL = "https://api-stage.orientalwallet.com/api/v1/deposit-receive?data=" 
-let getDepositURL = siteDepositURL + today + paymentID + "/" + depositAmount + "@" + uID + ";" + transferID
+let siteDepositURL = jpay_url.getDeposit
+let getDepositURL = siteDepositURL + dateToday + paymentID + "/" + depositAmount + "@" + uID + ";" + transferID
 
 describe('JPAY TESTING', () => {
 
