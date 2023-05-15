@@ -3,9 +3,12 @@ import { hash } from '../functions/sha256Generator'
 import { jpay_url } from '../functions/urls'
 import { generateString } from '../functions/randomStringGenerator'
 
-
-let merchantTransactionNumber = generateString(5)
-let sig = "CRA378942" + merchantTransactionNumber + "8840451493kazuha@mailinator.comWITHDRAWAL_REQUEST"
+let merchantID = "CRA378942"
+let accountID = "8840451493"
+let emailAddress = "kazuha@mailinator.com"
+let payLoadType = "WITHDRAWAL_REQUEST"
+let merchantTransactionNumber = generateString(10)
+let sig = merchantID + merchantTransactionNumber + accountID + emailAddress + payLoadType
 let signatureSha256= hash(sig)
 let merchantNumber = "8840451493"
 let bankName = "みずほ銀行"
@@ -13,16 +16,15 @@ let bankCode = "0001"
 let branchName = "函館支店"
 let branchCode = "735"
 let accountNumber = "1134687"
-let withdrawalAmount = "2000"
+let withdrawalAmount = "60000"
 let accountHolderKatakana = "カ）グローバルフィード"
 let accountHolderKanji = "カ）グローバルフィード"
 let callbackUrl = jpay_url.beeceptorUrl
 let postWithdrawalUrl = jpay_url.postWithdrawal
 
-console.log(signatureSha256)
 
 describe('JPAY TESTING', () => {
-    it("POST Generate Transfer", () => {
+    it("POST Withdraw", () => {
      cy.request({
        method: 'POST',
        url: postWithdrawalUrl,
