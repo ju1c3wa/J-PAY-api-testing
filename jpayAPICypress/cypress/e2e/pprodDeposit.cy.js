@@ -1,21 +1,22 @@
 import 'cypress-plugin-api'
 import { date_today } from '../functions/dateGenerator';
 import { generateString } from '../functions/randomStringGenerator';
-import { jpay_url } from '../functions/urls';
+import { jpay_url, jpaypprod_url } from '../functions/urls';
 import { valid_credentials, invalid_credentials } from '../functions/manualDepositStringHandler';
+import { pprodAccount2 } from '../functions/pprodStringHolder';
 
 var transactions = 0
 for(transactions = 0; transactions < 1 ; transactions++){
 
 let dateToday = date_today();
-let uID = valid_credentials.uID
+let uID = pprodAccount2.pprodUID
 let invalidUID = invalid_credentials.invalidUID
-let depositAmount = valid_credentials.depositAmount
-let transferID = valid_credentials.transferID
+let depositAmount = pprodAccount2.pprodwithdrawalAmount
+let transferID = pprodAccount2.pprodTransferID
 let paymentID = generateString(15);
 let paymentID2 = generateString(15);
 let payT = dateToday + paymentID2
-let siteDepositURL = jpay_url.getDeposit
+let siteDepositURL = jpaypprod_url.pprodGetDeposit
 let getDepositURL = siteDepositURL + dateToday + paymentID + "/" + depositAmount + "@" + uID + ";" + transferID
 
 describe('JPAY TESTING', () => {
