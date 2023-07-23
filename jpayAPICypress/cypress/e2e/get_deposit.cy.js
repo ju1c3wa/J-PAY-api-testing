@@ -5,7 +5,7 @@ import { jpay_url } from '../functions/urls';
 import { valid_credentials, invalid_credentials } from '../functions/manualDepositStringHandler';
 
 var transactions = 0
-for(transactions = 0; transactions < 1 ; transactions++){
+for(transactions = 0; transactions < 200 ; transactions++){
 
 let dateToday = date_today();
 let uID = valid_credentials.uID

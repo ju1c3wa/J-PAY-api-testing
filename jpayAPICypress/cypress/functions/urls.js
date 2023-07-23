@@ -12,5 +12,11 @@ var jpaypprod_url = {
     pprodBeeceptorURL: "https://joswa.free.beeceptor.com",
     pprodLiveDataBeeceptorURL: "https://joshua619.free.beeceptor.com"
     }
+var live_url ={
+    liveBatchWIthdrawal: "https://jp-api.orientalwallet.com/api/v1/withdrawal-receive",
+    liveJPDeposit: "https://jp-api.orientalwallet.com/api/v1/generate-transfer"
 
-module.exports = {jpay_url,jpaypprod_url}
+
+    }
+
+module.exports = {jpay_url,jpaypprod_url,live_url}

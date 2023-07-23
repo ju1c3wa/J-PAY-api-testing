@@ -40,5 +40,26 @@ var pprodAccount2 = {
     pprodTransferID: "0438441"
 }
 
+var liveAccount = {
+    //Withdrawal
+    pprodMerchantID: "FRX861072",
+    pprodaccountID: "1016855123",
+    pprodEmailAddress: "joshua619@mailinator.com",
+    pprodwithdrawalAmount: "1000",
+    pprodpayloadType: "WITHDRAWAL_REQUEST",
+    pprodmerchantNumber: "1016855123",
+    pprodbankName: "testname",
+    pprodbankCode: "0011",
+    pprodbranchName: "testbranch",
+    pprodbranchCode: "011",
+    pprodaccountNumber: "0001000",
+    pprodaccountHolderKatakana: "アラキタカ",
 
-module.exports = {pprodAccount, pprodAccount2};
+    //Deposit
+    pprodaccountHolderKanji: "荒木鷹 荒木鷹 荒木鷹",
+    pprodUID: "testing_123",
+    pprodTransferID: "0438441"
+}
+
+
+module.exports = {pprodAccount, pprodAccount2, liveAccount};
