@@ -6,7 +6,7 @@ import { valid_credentials, invalid_credentials } from '../functions/manualDepos
 import { liveAccount } from '../functions/pprodStringHolder';
 
 var transactions = 0
-for(transactions = 0; transactions < 2000 ; transactions++){
+for(transactions = 0; transactions < 300 ; transactions++){
 
 let dateToday = date_today();
 let uID = liveAccount.pprodUID

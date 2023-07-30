@@ -57,8 +57,8 @@ var liveAccount = {
 
     //Deposit
     pprodaccountHolderKanji: "荒木鷹 荒木鷹 荒木鷹",
-    pprodUID: "testing_123",
-    pprodTransferID: "0438441"
+    pprodUID: "joshuaQALiveTesting",
+    pprodTransferID: "1958816"
 }
 
 

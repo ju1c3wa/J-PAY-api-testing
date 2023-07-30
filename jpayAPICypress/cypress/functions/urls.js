@@ -14,9 +14,7 @@ var jpaypprod_url = {
     }
 var live_url ={
     liveBatchWIthdrawal: "https://jp-api.orientalwallet.com/api/v1/withdrawal-receive",
-    liveJPDeposit: "https://jp-api.orientalwallet.com/api/v1/generate-transfer"
-
-
+    liveJPDeposit: "https://jp-api.orientalwallet.com/api/v1/deposit-receive?data="
     }
 
 module.exports = {jpay_url,jpaypprod_url,live_url}
