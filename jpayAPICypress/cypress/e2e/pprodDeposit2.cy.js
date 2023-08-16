@@ -3,16 +3,16 @@ import { date_today } from '../functions/dateGenerator';
 import { generateString } from '../functions/randomStringGenerator';
 import { jpay_url, jpaypprod_url } from '../functions/urls';
 import { valid_credentials, invalid_credentials } from '../functions/manualDepositStringHandler';
-import { pprodAccount } from '../functions/pprodStringHolder';
+import { pprodAccount2 } from '../functions/pprodStringHolder';
 
 var transactions = 0
 for(transactions = 0; transactions < 2000 ; transactions++){
 
 let dateToday = date_today();
-let uID = pprodAccount.pprodUID
+let uID = pprodAccount2.pprodUID
 let invalidUID = invalid_credentials.invalidUID
-let depositAmount = pprodAccount.pprodwithdrawalAmount
-let transferID = pprodAccount.pprodTransferID
+let depositAmount = pprodAccount2.pprodwithdrawalAmount
+let transferID = pprodAccount2.pprodTransferID
 let paymentID = generateString(15);
 let paymentID2 = generateString(15);
 let payT = dateToday + paymentID2

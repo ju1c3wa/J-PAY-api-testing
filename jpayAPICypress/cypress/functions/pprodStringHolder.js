@@ -1,11 +1,11 @@
 var pprodAccount = {
     //Withdrawal
-    pprodMerchantID: "TYU935276",
-    pprodaccountID: "5327712033",
-    pprodEmailAddress: "joswa@mailinator.com",
+    pprodMerchantID: "HRW369347",
+    pprodaccountID: "3624622565",
+    pprodEmailAddress: "owa@mailinator.com",
     pprodwithdrawalAmount: "1000",
     pprodpayloadType: "WITHDRAWAL_REQUEST",
-    pprodmerchantNumber: "5327712033",
+    pprodmerchantNumber: "3624622565",
     pprodbankName: "testname",
     pprodbankCode: "0011",
     pprodbranchName: "testbranch",
@@ -15,18 +15,18 @@ var pprodAccount = {
 
     //Deposit
     pprodaccountHolderKanji: "荒木鷹 荒木鷹 荒木鷹",
-    pprodUID: "joshua_test_00001",
-    pprodTransferID: "6063111"
+    pprodUID: "UID_101",
+    pprodTransferID: "3933715"
 }
 
 var pprodAccount2 = {
     //Withdrawal
-    pprodMerchantID: "FRX861072",
-    pprodaccountID: "1016855123",
-    pprodEmailAddress: "joshua619@mailinator.com",
+    pprodMerchantID: "UQA287730",
+    pprodaccountID: "6106531816",
+    pprodEmailAddress: "testnijoshua@mailinator.com",
     pprodwithdrawalAmount: "1000",
     pprodpayloadType: "WITHDRAWAL_REQUEST",
-    pprodmerchantNumber: "1016855123",
+    pprodmerchantNumber: "6106531816",
     pprodbankName: "testname",
     pprodbankCode: "0011",
     pprodbranchName: "testbranch",
@@ -36,8 +36,8 @@ var pprodAccount2 = {
 
     //Deposit
     pprodaccountHolderKanji: "荒木鷹 荒木鷹 荒木鷹",
-    pprodUID: "testing_123",
-    pprodTransferID: "0438441"
+    pprodUID: "xxx-0069",
+    pprodTransferID: "5407023"
 }
 
 var liveAccount = {
