@@ -1,19 +1,20 @@
 import 'cypress-plugin-api'
 import { hash } from '../functions/sha256Generator'
-import { jpay_url } from '../functions/urls'
+import { jpay_url, live_url } from '../functions/urls'
 import { generateString } from '../functions/randomStringGenerator'
-import { invalid_credentials, valid_credentials } from '..//functions/jpAutoWithdrawalStringHandler'
+import { invalid_credentials, valid_credentials } from '../functions/jpAutoWithdrawalStringHandler'
 import { deepEqual } from 'assert'
+import { liveAccount} from '../functions/pprodStringHolder'
 
 
 var i = 0
-for(i = 0; i < 50; i++){
+for(i = 0; i < 20; i++){
 
-let merchantID = valid_credentials.merchantID
-let accountID = valid_credentials.accountID
-let emailAddress = valid_credentials.ayakaEmailAddress
-let withdrawalAmount = valid_credentials.withdrawalAmount
-let payLoadType = valid_credentials.payloadType
+let merchantID = liveAccount.liveMerchantID
+let accountID = liveAccount.liveaccountID
+let emailAddress = liveAccount.liveEmailAddress
+let withdrawalAmount = liveAccount.livewithdrawalAmount
+let payLoadType = liveAccount.liveautopayloadType
 let merchantTransactionNumber = generateString(10)
 let merchantTransactionNumber2 = generateString(10)
 let sig = merchantID + merchantTransactionNumber + accountID + emailAddress + withdrawalAmount + payLoadType
@@ -22,25 +23,25 @@ let signatureSha256= hash(sig)
 let signatureSha2562= hash(sig2)
 let notValidSignature = invalid_credentials.notValidSignature
 let uniqueSignature = invalid_credentials.usedSignature
-let merchantNumber = valid_credentials.merchantNumber
-let bankName = valid_credentials.bankName
-let bankCode = valid_credentials.bankCode
+let merchantNumber = liveAccount.livemerchantNumber
+let bankName = liveAccount.livebankName
+let bankCode = liveAccount.livebankCode
 let threeDigitBankCode = invalid_credentials.threeDigitBankCode
-let branchName = valid_credentials.branchName
-let branchCode = valid_credentials.branchCode
+let branchName = liveAccount.livebranchName
+let branchCode = liveAccount.livebranchCode
 let twoDigitBranchCode = invalid_credentials.twoDigitBranchCode
 let differentBranchCode = invalid_credentials.diffBranchCode
 let differentBranchName = invalid_credentials.diffBranchName
 let differentBankCode = invalid_credentials.diffBankCode
 let differentBankName = invalid_credentials.diffBankName
-let testAccount = valid_credentials.account
+let testAccount = liveAccount.liveaccountNumber
 let sixDigitAccount = invalid_credentials.sixDigitAccount
-let name = valid_credentials.name
+let name = liveAccount.livename
 let aboveTenMillAmount = invalid_credentials.aboveTenMillAmount
 let lessOneThouAmount = invalid_credentials.lessOneThouAmount
 let invalidMerchantNumber = invalid_credentials.invalidMerchantNumber
 let callbackUrl = jpay_url.beeceptorUrlAyaka
-let postJPWithdrawalUrl = jpay_url.postJPWithdrawal
+let postJPWithdrawalUrl = live_url.liveAutoJPWithdrawal
 let hiraganaName = invalid_credentials.hiraganaName
 
   describe('JPAY TESTING', () => {
@@ -75,8 +76,8 @@ let hiraganaName = invalid_credentials.hiraganaName
                             })
                             cy.get('@details').then((response) => {
                             cy.log(JSON.stringify(response.body))
-                            cy.wait(60000)
                             });
+                            cy.wait(60000)
                         })
 
                       it("should test with missing merchant transaction number", () => {

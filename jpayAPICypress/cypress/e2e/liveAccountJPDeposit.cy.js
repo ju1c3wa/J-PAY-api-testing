@@ -6,7 +6,7 @@ import { valid_credentials, invalid_credentials } from '../functions/manualDepos
 import { liveAccount } from '../functions/pprodStringHolder';
 
 var transactions = 0
-for(transactions = 0; transactions < 300 ; transactions++){
+for(transactions = 0; transactions < 1000 ; transactions++){
 
 let dateToday = date_today();
 let uID = liveAccount.pprodUID
@@ -15,9 +15,10 @@ let depositAmount = liveAccount.pprodwithdrawalAmount
 let transferID = liveAccount.pprodTransferID
 let paymentID = generateString(15);
 let paymentID2 = generateString(15);
+let x = Math.floor((Math.random(1000) * 99999) + 1);
 let payT = dateToday + paymentID2
 let siteDepositURL = live_url.liveJPDeposit
-let getDepositURL = siteDepositURL + dateToday + paymentID + "/" + depositAmount + "@" + uID + ";" + transferID
+let getDepositURL = siteDepositURL + dateToday + paymentID + "/" + x + "@" + uID + ";" + transferID
 
 describe('JPAY TESTING', () => {
 

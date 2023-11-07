@@ -14,20 +14,6 @@ var valid_credentials = {
     accountHolderKatakana: "カ）グローバルフィード",
     accountHolderKanji: "カ）グローバルフィード",
 
-    pprodMerchantID: "PTN097537",
-    pprodaccountID: "2202772836",
-    pprodEmailAddress: "aijpayqatest@gmail.com",
-    pprodwithdrawalAmount: "1000",
-    pprodpayloadType: "WITHDRAWAL_REQUEST",
-    pprodmerchantNumber: "2202772836",
-    pprodbankName: "testname",
-    pprodbankCode: "0011",
-    pprodbranchName: "testbranch",
-    pprodbranchCode: "011",
-    pprodaccountNumber: "0001000",
-    pprodaccountHolderKatakana: "アラキタカ",
-    pprodaccountHolderKanji: "荒木鷹 荒木鷹 荒木鷹",
-
 }
 
 var invalid_credentials = {

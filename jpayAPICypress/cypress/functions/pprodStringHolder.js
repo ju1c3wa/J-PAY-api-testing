@@ -42,21 +42,23 @@ var pprodAccount2 = {
 
 var liveAccount = {
     //Withdrawal
-    pprodMerchantID: "FRX861072",
-    pprodaccountID: "1016855123",
-    pprodEmailAddress: "joshua619@mailinator.com",
-    pprodwithdrawalAmount: "1000",
-    pprodpayloadType: "WITHDRAWAL_REQUEST",
-    pprodmerchantNumber: "1016855123",
-    pprodbankName: "testname",
-    pprodbankCode: "0011",
-    pprodbranchName: "testbranch",
-    pprodbranchCode: "011",
-    pprodaccountNumber: "0001000",
-    pprodaccountHolderKatakana: "アラキタカ",
+    liveMerchantID: "FRX861072",
+    liveaccountID: "1016855123",
+    liveEmailAddress: "joshua619@mailinator.com",
+    livewithdrawalAmount: "10000",
+    livepayloadType: "WITHDRAWAL_REQUEST",
+    liveautopayloadType: "JP_WITHDRAWAL_REQUEST",
+    livemerchantNumber: "1016855123",
+    livebankName: "みずほ銀行",
+    livebankCode: "0001",
+    livebranchName: "函館支店",
+    livebranchCode: "735",
+    liveaccountNumber: "0001000",
+    liveaccountHolderKatakana: "アラキタカ",
+    liveaccountHolderKanji: "荒木鷹 荒木鷹 荒木鷹",
+    livename: "マツダヒロヒト",
 
     //Deposit
-    pprodaccountHolderKanji: "荒木鷹 荒木鷹 荒木鷹",
     pprodUID: "joshuaQALiveTesting",
     pprodTransferID: "1958816"
 }

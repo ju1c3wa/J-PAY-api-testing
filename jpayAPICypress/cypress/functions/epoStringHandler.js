@@ -1,13 +1,14 @@
 var valid_credentials = {
-    merchantID: "AFC-95263284",
-    merchantReceive: "IA15165943",
-    senderID: "CA92781669",
-    debitCurr: "EUR",
-    curr: "EUR",
-    withAmount: "1",
-    notes: "sample",
-    payloadType: "INTERNAL_WITHDRAWAL",
-    merchantEmail: "Manus97_aldin@mailinator.com"
+    receiverIndividualAccount:"IA38126813",
+    merchantAccount:"CA35599627",
+    debitCurrency:"EUR",
+    currency:"EUR",
+    transactionId:"JULS-APITEST",
+    amount: 10,
+    note: "juls withdrawal test",
+    mid: "AYK-90909245",
+    emailAddress: "nanalasthit@gmail.com",
+    payloadType: "INTERNAL_WITHDRAWAL"
 }
 
 

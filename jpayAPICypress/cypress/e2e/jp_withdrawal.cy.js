@@ -6,7 +6,7 @@ import { valid_credentials, invalid_credentials } from '../functions/jpWithdrawa
 
 
 var i = 0
-for(i = 0; i < 1; i++){
+for(i = 0; i < 50; i++){
 
 let merchantID = valid_credentials.merchantID
 let accountID = valid_credentials.accountID
@@ -40,7 +40,7 @@ let negativeValue = invalid_credentials.negativeValue
 
 
 describe('JPAY TESTING', () => {
-    it("POST Withdraw", () => {
+    it.only("POST Withdraw", () => {
       cy.request({
         method: 'POST',
         url: postWithdrawalUrl,

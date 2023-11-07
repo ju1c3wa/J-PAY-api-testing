@@ -3,31 +3,31 @@ import { hash } from '../functions/sha256Generator'
 import { jpay_url, jpaypprod_url } from '../functions/urls'
 import { generateString } from '../functions/randomStringGenerator'
 import { valid_credentials, invalid_credentials } from '../functions/jpWithdrawalStringHandler'
-import { pprodAccount } from '../functions/pprodStringHolder'
+import { pprodAccount, pprodAccount2 } from '../functions/pprodStringHolder'
 
 
 var i = 0
 for(i = 0; i < 50; i++){
 
-let merchantID = pprodAccount.pprodMerchantID
-let accountID = pprodAccount.pprodaccountID
-let emailAddress = pprodAccount.pprodEmailAddress
-let payLoadType = pprodAccount.pprodpayloadType
+let merchantID = pprodAccount2.pprodMerchantID
+let accountID = pprodAccount2.pprodaccountID
+let emailAddress = pprodAccount2.pprodEmailAddress
+let payLoadType = pprodAccount2.pprodpayloadType
 let merchantTransactionNumber = generateString(10)
 let merchantTransactionNumber2 = generateString(11)
 let sig = merchantID + merchantTransactionNumber + accountID + emailAddress + payLoadType
 // let sig2 = merchantID + merchantTransactionNumber2 + accountID + emailAddress + payLoadType
 let signatureSha256 = hash(sig)
 // let secondSignatureSha256 = hash(sig2)
-let merchantNumber = pprodAccount.pprodmerchantNumber
-let bankName = pprodAccount.pprodbankName
-let bankCode = pprodAccount.pprodbankCode
-let branchName = pprodAccount.pprodbranchName
-let branchCode = pprodAccount.pprodbranchCode
-let accountNumber = pprodAccount.pprodaccountNumber
-let withdrawalAmount = pprodAccount.pprodwithdrawalAmount
-let accountHolderKatakana = pprodAccount.pprodaccountHolderKatakana
-let accountHolderKanji = pprodAccount.pprodaccountHolderKanji
+let merchantNumber = pprodAccount2.pprodmerchantNumber
+let bankName = pprodAccount2.pprodbankName
+let bankCode = pprodAccount2.pprodbankCode
+let branchName = pprodAccount2.pprodbranchName
+let branchCode = pprodAccount2.pprodbranchCode
+let accountNumber = pprodAccount2.pprodaccountNumber
+let withdrawalAmount = pprodAccount2.pprodwithdrawalAmount
+let accountHolderKatakana = pprodAccount2.pprodaccountHolderKatakana
+let accountHolderKanji = pprodAccount2.pprodaccountHolderKanji
 let callbackUrl = jpaypprod_url.pprodBeeceptorURL
 let postWithdrawalUrl = jpaypprod_url.pprodpostWithdrawal
 
@@ -41,7 +41,7 @@ let negativeValue = invalid_credentials.negativeValue
 
 
 describe('JPAY TESTING', () => {
-    it("POST Withdraw", () => {
+    it.only("POST Withdraw", () => {
       cy.request({
         method: 'POST',
         url: postWithdrawalUrl,

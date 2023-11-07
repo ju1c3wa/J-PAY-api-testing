@@ -13,11 +13,12 @@ let uID = pprodAccount.pprodUID
 let invalidUID = invalid_credentials.invalidUID
 let depositAmount = pprodAccount.pprodwithdrawalAmount
 let transferID = pprodAccount.pprodTransferID
+let x = Math.floor((Math.random(1000) * 99999) + 1);
 let paymentID = generateString(15);
 let paymentID2 = generateString(15);
 let payT = dateToday + paymentID2
 let siteDepositURL = jpaypprod_url.pprodGetDeposit
-let getDepositURL = siteDepositURL + dateToday + paymentID + "/" + depositAmount + "@" + uID + ";" + transferID
+let getDepositURL = siteDepositURL + dateToday + paymentID + "/" + x + "@" + uID + ";" + transferID
 
 describe('JPAY TESTING', () => {
 

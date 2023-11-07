@@ -1,15 +1,18 @@
 var valid_credentials = {
     sID: "509999232",
-    uID: "ayaka2315",
+    uID: "kazuha_1291121",
     depositAmount: "100000",
-    merchantNumber: "8471592957",
+    merchantNumber: "8840451493",
     receivingCurrency: "JPY",
-    transferID: "9481544",
+    transferID: "3555418",
     returnUrl: "172.68.118.38"
 }
 
 var invalid_credentials = {
-    invalidUID: '',
+    emptyUID: '',
+    emptyTransferID: '',
+    emptyPaymentID: '',
+    emptyAmount: '',
 
 }
 

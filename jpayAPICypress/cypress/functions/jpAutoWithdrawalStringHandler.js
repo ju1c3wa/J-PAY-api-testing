@@ -1,16 +1,32 @@
 var valid_credentials = {
-    merchantID: "UEW481008",
-    accountID: "8471592957",
-    ayakaEmailAddress: "aya@mailinator.com",
+    merchantID: "CRA378942",
+    accountID: "8840451493",
+    ayakaEmailAddress: "kazuha@mailinator.com",
     withdrawalAmount: "1000",
     payloadType: "JP_WITHDRAWAL_REQUEST",
-    merchantNumber: "8471592957",
+    merchantNumber: "8840451493",
     bankName: "みずほ銀行",
     bankCode: "0001",
     branchName: "函館支店",
     branchCode: "735",
     account: "1234567",
-    name: "マツダヒロヒト"
+    name: "マツダヒロヒト",
+
+    pprodMerchantID: "UQA287730",
+    pprodaccountID: "6106531816",
+    pprodEmailAddress: "testnijoshua@mailinator.com",
+    pprodwithdrawalAmount: "1000",
+    pprodpayloadType: "WITHDRAWAL_REQUEST",
+    pprodmerchantNumber: "6106531816",
+    pprodbankName: "みずほ銀行",
+    pprodbankCode: "0001",
+    pprodbranchName: "函館支店",
+    pprodbranchCode: "735",
+    pprodaccountNumber: "0001000",
+    pprodAccount: "1234567",
+    pprodName: "マツダヒロヒト",
+
+
 }
 
 var invalid_credentials = {

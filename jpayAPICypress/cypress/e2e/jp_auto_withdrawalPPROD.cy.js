@@ -1,6 +1,6 @@
 import 'cypress-plugin-api'
 import { hash } from '../functions/sha256Generator'
-import { jpay_url } from '../functions/urls'
+import { jpay_url, jpaypprod_url } from '../functions/urls'
 import { generateString } from '../functions/randomStringGenerator'
 import { invalid_credentials, valid_credentials } from '..//functions/jpAutoWithdrawalStringHandler'
 import { deepEqual } from 'assert'
@@ -9,11 +9,18 @@ import { deepEqual } from 'assert'
 var i = 0
 for(i = 0; i < 50; i++){
 
-let merchantID = valid_credentials.merchantID
-let accountID = valid_credentials.accountID
-let emailAddress = valid_credentials.ayakaEmailAddress
-let withdrawalAmount = valid_credentials.withdrawalAmount
+let merchantID = valid_credentials.pprodMerchantID
+let accountID = valid_credentials.pprodaccountID
+let emailAddress = valid_credentials.pprodEmailAddress
+let withdrawalAmount = valid_credentials.pprodwithdrawalAmount
 let payLoadType = valid_credentials.payloadType
+let bankName = valid_credentials.pprodbankName
+let bankCode = valid_credentials.pprodbankCode
+let branchName = valid_credentials.pprodbranchName
+let branchCode = valid_credentials.pprodbranchCode
+let merchantNumber = valid_credentials.pprodmerchantNumber
+let testAccount = valid_credentials.pprodAccount
+let name = valid_credentials.pprodName
 let merchantTransactionNumber = generateString(10)
 let merchantTransactionNumber2 = generateString(10)
 let sig = merchantID + merchantTransactionNumber + accountID + emailAddress + withdrawalAmount + payLoadType
@@ -22,25 +29,18 @@ let signatureSha256= hash(sig)
 let signatureSha2562= hash(sig2)
 let notValidSignature = invalid_credentials.notValidSignature
 let uniqueSignature = invalid_credentials.usedSignature
-let merchantNumber = valid_credentials.merchantNumber
-let bankName = valid_credentials.bankName
-let bankCode = valid_credentials.bankCode
 let threeDigitBankCode = invalid_credentials.threeDigitBankCode
-let branchName = valid_credentials.branchName
-let branchCode = valid_credentials.branchCode
 let twoDigitBranchCode = invalid_credentials.twoDigitBranchCode
 let differentBranchCode = invalid_credentials.diffBranchCode
 let differentBranchName = invalid_credentials.diffBranchName
 let differentBankCode = invalid_credentials.diffBankCode
 let differentBankName = invalid_credentials.diffBankName
-let testAccount = valid_credentials.account
 let sixDigitAccount = invalid_credentials.sixDigitAccount
-let name = valid_credentials.name
 let aboveTenMillAmount = invalid_credentials.aboveTenMillAmount
 let lessOneThouAmount = invalid_credentials.lessOneThouAmount
 let invalidMerchantNumber = invalid_credentials.invalidMerchantNumber
-let callbackUrl = jpay_url.beeceptorUrlAyaka
-let postJPWithdrawalUrl = jpay_url.postJPWithdrawal
+let callbackUrl = jpaypprod_url.pprodCallbackURL
+let postJPWithdrawalUrl = jpaypprod_url.pprodAutoJPWithdrawal
 let hiraganaName = invalid_credentials.hiraganaName
 
   describe('JPAY TESTING', () => {
@@ -75,8 +75,8 @@ let hiraganaName = invalid_credentials.hiraganaName
                             })
                             cy.get('@details').then((response) => {
                             cy.log(JSON.stringify(response.body))
-                            cy.wait(60000)
                             });
+                            cy.wait(60000)
                         })
 
                       it("should test with missing merchant transaction number", () => {
